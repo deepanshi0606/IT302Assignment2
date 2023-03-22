@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>Exercise29</title>
+    </head>
+    <body>
+        <script>
+           fontSize=5;
+            growing=true;
+            textElement = document.createElement('p');
+            document.body.appendChild(textElement);
+
+                function updateText(){
+                if(growing){
+                    textElement.style.color='red';
+                    textElement.textContent='TEXT-GROWING';
+                   fontSize+=1;
+                    if(fontSize>=50){
+                    growing=false;
+                   fontSize=50;
+                }
+            }
+            else{
+                textElement.style.color='blue';
+                textElement.textContent='TEXT-SHRINKNG';
+               fontSize-=1;
+                if(fontSize<=5){
+                    clearInterval(intervalId);
+                    textElement.remove();
+                }
+            }
+            textElement.style.fontSize = `${fontSize}pt`;
+
+            }
+            intervalId=setInterval(updateText, 100);
+        </script>
+    </body>
+</html>

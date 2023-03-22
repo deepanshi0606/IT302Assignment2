@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>Exercise28</title>
+        <style>
+            #greeting{
+                font-size: x-large;
+                font-weight: bolder;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body onload="showGreeting()">
+        <div id="greeting"></div>
+        <script>
+            function showGreeting(){
+                greetingelement=document.getElementById("greeting");
+                currenttime=new Date();
+                hours= currenttime.getHours();
+                minutes= currenttime.getMinutes();
+                username=prompt("Enter your Name");
+
+                if(username==null || username==""){
+                    username="Guest";
+                }
+
+                if(hours<12){
+                    greetingelement.innerHTML="Good Morning " + username + "!";
+                }
+
+                else if(hours< 17){
+                    greetingelement.innerHTML="Good Afternoon " + username + "!";
+                }
+                else{
+                    greetingelement.innerHTML="Good Evening " + username + "!";
+                }
+
+                greetingelement.onclick=function(){
+                    greetingelement.style.display="none";
+                }
+            }
+        </script>
+    </body>
+</html>              
+                
+                
+                

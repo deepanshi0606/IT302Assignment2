@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Exercise30</title>
+    </head>
+    <body>
+        <h3>Guess a number between 1 to 1000 </h3>
+        <p id="result"></p>
+        <p id="attempts"></p>
+        <input type="text" id="guess">
+        <button id="guessBtn"> Show Result</button>
+        <script>
+             var randomNum=Math.floor(Math.random()* 1000) + 1;
+             var Result = document.getElementById('result');
+             var Attempts = document.getElementById('attempts');
+            var attemptscount=0;
+            function checkGuess(){
+                attemptscount++;
+            inputValue=parseInt(document.getElementById('guess').value)
+
+            if(inputValue == ""){
+                result.textContent="Please Enter a number"
+            }
+
+            else if(inputValue == randomNum){
+                result.textContent="Congratulations! You guessed the right number";
+                attempts.textContent="your attempts: " + attemptscount;
+            }
+            else if(inputValue < randomNum){
+                result.textContent="Too Low! Try Again!"
+                attempts.textContent="your Attempts: " + attemptscount;
+            }
+            else{
+                result.textContent="Too high! Try Again!"
+                attempts.textContent="your Attempts: " + attemptscount;
+            }
+
+            document.getElementById('guess').value = "";
+            }
+            
+
+            document.getElementById('guessBtn').addEventListener('click', checkGuess);
+        </script>
+    </body>
+</html>

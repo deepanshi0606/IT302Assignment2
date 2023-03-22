@@ -1,0 +1,53 @@
+<!-- // Implement a Javascript function that accept number of rows(m) and columns(n) 
+// from user and displays a 2D m x n square layout of alternate colorsblack and red.  -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercise 22</title>
+        <style>
+            .container{
+                display: flex;
+                box-sizing: border-box;
+
+            }
+            .inner1{
+                height: 100px;
+                width: 100px;
+                background-color: black;
+                /* border: solid 6px white; */
+            }
+            .inner2{
+                height: 100px;
+                width: 100px;
+                background-color: white;
+                /* border: solid 6px black; */
+            }
+
+            .inner1:hover{
+                background-color: red;
+                font-size: 80px;
+            }
+            .inner2:hover{
+                background-color: green;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            rows=prompt("Enter number of Rows")
+            columns = prompt("Enter number of Columns")
+        for(j=0; j<rows; j++){
+            document.write("<div class='container'>")
+            for(i=0; i<columns; i++){
+                if((i+j)%2==0)
+                    document.write("<div class='inner1'>"+i+"</div>")
+                else
+                document.write("<div class='inner2'>"+j+"</div>")
+            }
+            document.write("</div>");
+        }
+            
+        </script>
+    </body>
+</html>

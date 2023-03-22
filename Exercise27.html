@@ -1,0 +1,39 @@
+<!-- Create a Webpage to display digital clock that display updated time of your system 
+without refreshing webpage. -->
+
+<html>
+    <head>
+        <title>Exercise27</title>
+    </head>
+    <body onload="startclock()">
+        <h1>Digital Clock</h1>
+        <div id="clock"></div>
+        <script>
+            function startclock(){
+                clockelement=document.getElementById("clock");
+                updateclock();
+                setInterval(function(){
+                    updateclock();
+                }, 1000);
+            
+
+            function updateclock(){
+                currenttime=new Date();
+                hours= currenttime.getHours();
+                minutes= currenttime.getMinutes();
+                seconds= currenttime.getSeconds();
+                timeString= formatTime(hours)+":"+formatTime(minutes)+":"+formatTime(seconds);
+                clockelement.innerHTML=timeString
+            }
+
+            function formatTime(time){
+                return(time<10 ? "0" : "")+ time.toString();
+
+            }
+        }
+            
+        </script>
+
+        
+    </body>
+</html>
